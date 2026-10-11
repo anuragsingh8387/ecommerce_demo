@@ -7,29 +7,29 @@
 */
 window.STORE_PRODUCTS = [
   {
-    id: "glow-drop-serum",
-    name: "Glow Drop Serum",
+    id: "yepre-pink-collagen-sunscreen",
+    name: "Ye;pre Pink Collagen Sunscreen",
     category: "face",
-    label: "Bestseller",
-    short: "Brightening daily serum",
-    description: "A lightweight, silky serum designed to add a fresh-looking glow without a sticky finish.",
+    label: "Featured",
+    short: "Your glow-first morning essential",
+    description: "A pink collagen sunscreen created as an easy final step in your morning skincare ritual.",
     price: 799,
     compareAt: 999,
-    size: "30 ml",
-    image: "assets/product-serum.png",
+    size: "50 ml",
+    image: "assets/product-cream.png",
     color: "#f6c6b2"
   },
   {
     id: "cloud-soft-cream",
-    name: "Cloud Soft Cream",
+    name: "Dew Drop Serum",
     category: "face",
     label: "New",
-    short: "Comforting daily moisture",
-    description: "A cushiony cream for soft, comfortable-feeling skin from morning to bedtime.",
+    short: "Lightweight daily hydration",
+    description: "A silky serum for comfortable-feeling skin from morning to bedtime.",
     price: 649,
     compareAt: 749,
     size: "50 g",
-    image: "assets/product-cream.png",
+    image: "assets/product-serum.png",
     color: "#efd3cf"
   },
   {

@@ -1,4 +1,4 @@
-# Mira & Moss storefront
+# Seoul Glow storefront
 
 A mobile-first static ecommerce storefront built for social-ad traffic. It works without a build step and stores the demo cart in the visitor's browser.
 

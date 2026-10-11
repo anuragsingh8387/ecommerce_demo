@@ -1,6 +1,6 @@
 const products = window.STORE_PRODUCTS || [];
 const money = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 });
-const state = { category: "all", search: "", cart: JSON.parse(localStorage.getItem("mira-cart") || "{}") };
+const state = { category: "all", search: "", cart: JSON.parse(localStorage.getItem("seoul-glow-cart") || "{}") };
 
 const grid = document.querySelector("#product-grid");
 const emptyState = document.querySelector("#empty-state");
@@ -32,7 +32,7 @@ function renderProducts() {
   emptyState.hidden = filtered.length > 0;
 }
 
-function saveCart() { localStorage.setItem("mira-cart", JSON.stringify(state.cart)); }
+function saveCart() { localStorage.setItem("seoul-glow-cart", JSON.stringify(state.cart)); }
 function cartQuantity() { return Object.values(state.cart).reduce((sum, qty) => sum + qty, 0); }
 function cartSubtotal() { return products.reduce((sum, p) => sum + p.price * (state.cart[p.id] || 0), 0); }
 

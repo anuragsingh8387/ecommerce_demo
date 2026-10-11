@@ -35,6 +35,6 @@ const server = createServer((request, response) => {
 });
 
 server.listen(port, "127.0.0.1", () => {
-  console.log(`Mira & Moss is running at http://localhost:${port}`);
+  console.log(`Seoul Glow is running at http://localhost:${port}`);
   console.log("Press Ctrl+C to stop.");
 });
