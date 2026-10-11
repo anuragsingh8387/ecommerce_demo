@@ -2,9 +2,31 @@
 
 A mobile-first static ecommerce storefront built for social-ad traffic. It works without a build step and stores the demo cart in the visitor's browser.
 
-## Preview locally
+## Preview locally with npm
 
-Run `python3 -m http.server 4173 --directory dist` in this folder, then open `http://localhost:4173`.
+Node.js 18 or newer is required. No package installation or third-party dependencies are needed.
+
+```bash
+npm start
+```
+
+Then open `http://localhost:4173`. Press `Ctrl+C` to stop the server.
+
+Run the JavaScript checks with:
+
+```bash
+npm run check
+```
+
+## Publish with GitHub Pages
+
+The included `.github/workflows/deploy-pages.yml` publishes the `dist` folder whenever the `main` branch is updated.
+
+After pushing the repository, open **Settings → Pages** in GitHub. Under **Build and deployment**, choose **GitHub Actions**. The live address will be:
+
+```text
+https://GITHUB-USERNAME.github.io/REPOSITORY-NAME/
+```
 
 ## Add or edit a product (no coding tools required)
 
