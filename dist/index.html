@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mira & Moss — thoughtful everyday care for skin and body." />
+    <meta name="theme-color" content="#f7f1e8" />
+    <title>Mira & Moss — Everyday care, elevated</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="products.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#products">Skip to products</a>
+    <div class="announcement">
+      <p><span>First order?</span> Enjoy 15% off with <strong>HELLO15</strong></p>
+      <button aria-label="Close offer" data-close-announcement>×</button>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <button class="icon-button menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h12M4 17h16" /></svg>
+        </button>
+        <a class="brand" href="#top" aria-label="Mira and Moss home">
+          <span class="brand-mark">M</span>
+          <span class="brand-copy"><strong>MIRA &amp; MOSS</strong><small>EVERYDAY RITUALS</small></span>
+        </a>
+        <div class="desktop-nav">
+          <a href="#products">Shop</a>
+          <a href="#story">Our story</a>
+          <a href="#promise">Our promise</a>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-button search-button" aria-label="Search products">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+          </button>
+          <button class="cart-button" aria-label="Open shopping bag">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.5h11l1 11h-13l1-11Z"/><path d="M9 9V6.5a3 3 0 0 1 6 0V9"/></svg>
+            <span>Bag</span><b class="cart-count">0</b>
+          </button>
+        </div>
+      </nav>
+      <div id="mobile-menu" class="mobile-menu" hidden>
+        <a href="#products">Shop all</a>
+        <a href="#story">Our story</a>
+        <a href="#promise">Our promise</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="search-panel" hidden>
+        <label for="site-search">What are you looking for?</label>
+        <div><input id="site-search" type="search" placeholder="Search serum, body care…" autocomplete="off" /><button type="button" data-clear-search>Clear</button></div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img src="assets/hero-rituals.png" alt="A curated collection of skincare and body-care bottles in warm sunlight" />
+        <div class="hero-scrim"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Small rituals. Big difference.</p>
+          <h1 id="hero-title">Care that feels<br />like <em>you.</em></h1>
+          <p class="hero-subtitle">Thoughtful essentials for brighter mornings, softer evenings, and everything in between.</p>
+          <a class="button button-dark" href="#products">Shop the collection <span>↗</span></a>
+          <div class="hero-proof"><span>✦</span> Kind ingredients <i></i><span>♻</span> Mindful packaging</div>
+        </div>
+        <div class="hero-note"><span>01</span><p>Made for<br /><strong>everyday care</strong></p></div>
+      </section>
+
+      <section class="quick-shop" aria-label="Shop by category">
+        <p>Find your ritual</p>
+        <div class="category-scroller">
+          <button class="category-chip is-active" data-category="all"><span>✦</span>All products</button>
+          <button class="category-chip" data-category="face"><span>◌</span>Face care</button>
+          <button class="category-chip" data-category="body"><span>≈</span>Body care</button>
+          <button class="category-chip" data-category="wellness"><span>☼</span>Wellness</button>
+        </div>
+      </section>
+
+      <section class="products-section" id="products" aria-labelledby="products-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Meet the favourites</p><h2 id="products-title">The everyday edit</h2></div>
+          <p>Four hardworking essentials. No complicated routine required.</p>
+        </div>
+        <div id="product-grid" class="product-grid" aria-live="polite"></div>
+        <p id="empty-state" class="empty-state" hidden>No products found. Try another search.</p>
+      </section>
+
+      <section class="story" id="story">
+        <div class="story-number">02</div>
+        <div class="story-copy">
+          <p class="eyebrow">Why Mira &amp; Moss</p>
+          <h2>Your shelf should feel simple, not stressful.</h2>
+          <p>We believe daily care can be effective, beautiful, and easy to understand. Our edit brings together considered essentials that earn their place in your routine.</p>
+          <a href="#promise">How we choose our products <span>→</span></a>
+        </div>
+        <div class="story-card">
+          <span class="orb orb-one"></span><span class="orb orb-two"></span>
+          <p>“A small pause in a busy day.”</p>
+          <div><span>Morning</span><span>Evening</span></div>
+        </div>
+      </section>
+
+      <section class="promise" id="promise" aria-labelledby="promise-title">
+        <div class="section-heading"><div><p class="eyebrow">Good to know</p><h2 id="promise-title">Care, considered.</h2></div></div>
+        <div class="promise-grid">
+          <article><span>01</span><h3>Thoughtful formulas</h3><p>Clear product details and no confusing routine rules.</p></article>
+          <article><span>02</span><h3>Fast dispatch</h3><p>Orders are carefully packed and prepared within 1–2 business days.</p></article>
+          <article><span>03</span><h3>Here to help</h3><p>Real guidance before and after you place an order.</p></article>
+        </div>
+      </section>
+
+      <section class="newsletter" id="contact">
+        <div><p class="eyebrow">The good note</p><h2>Offers, rituals, and shelf-worthy finds.</h2></div>
+        <form id="newsletter-form"><label class="sr-only" for="newsletter-email">Email address</label><input id="newsletter-email" type="email" placeholder="Your email address" required /><button type="submit">Join us <span>→</span></button></form>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="#top"><span class="brand-mark">M</span><span class="brand-copy"><strong>MIRA &amp; MOSS</strong><small>EVERYDAY RITUALS</small></span></a>
+      <p>Made thoughtfully for slow moments and busy days.</p>
+      <div class="footer-links"><a href="#products">Shop</a><a href="#story">About</a><a href="mailto:hello@example.com">Contact</a><a href="#">Instagram</a></div>
+      <small>© <span id="year"></span> Mira &amp; Moss. Sample storefront.</small>
+    </footer>
+
+    <div class="backdrop" hidden></div>
+    <aside class="cart-drawer" aria-hidden="true" aria-labelledby="cart-title">
+      <div class="drawer-head"><div><p class="eyebrow">Your selection</p><h2 id="cart-title">Shopping bag</h2></div><button class="icon-button drawer-close" aria-label="Close shopping bag">×</button></div>
+      <div class="shipping-progress"><p><span data-shipping-message>Add ₹1,499 for free shipping</span><strong data-progress-label>0%</strong></p><div><span data-progress-bar></span></div></div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-empty"><div>◌</div><h3>Your bag is taking a breather.</h3><p>Add something lovely to get started.</p><button class="button button-outline" data-close-cart>Explore products</button></div>
+      <div class="cart-footer" hidden><div><span>Subtotal</span><strong id="cart-total">₹0</strong></div><small>Taxes included. Shipping calculated at checkout.</small><button class="button button-dark checkout-button">Checkout securely <span>→</span></button></div>
+    </aside>
+
+    <dialog class="product-dialog" id="product-dialog">
+      <button class="dialog-close icon-button" aria-label="Close product details">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+
+    <dialog class="checkout-dialog" id="checkout-dialog">
+      <button class="dialog-close icon-button" aria-label="Close checkout">×</button>
+      <div class="checkout-copy"><p class="eyebrow">Secure checkout</p><h2>Where should we send it?</h2><p>This preview saves no personal information. Connect Razorpay, Stripe, or Shopify before accepting live payments.</p></div>
+      <form id="checkout-form">
+        <div class="field-row"><label>Full name<input name="name" required placeholder="Your name" /></label><label>Phone<input name="phone" required inputmode="tel" placeholder="10-digit number" /></label></div>
+        <label>Email<input name="email" type="email" required placeholder="you@example.com" /></label>
+        <label>Delivery address<textarea name="address" required placeholder="House, street, city, PIN code"></textarea></label>
+        <button class="button button-dark" type="submit">Place demo order <span>→</span></button>
+      </form>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <nav class="mobile-dock" aria-label="Mobile shortcuts"><a href="#top"><span>⌂</span>Home</a><a href="#products"><span>◇</span>Shop</a><button class="dock-cart"><span>▢</span>Bag <b class="cart-count">0</b></button></nav>
+  </body>
+</html>
