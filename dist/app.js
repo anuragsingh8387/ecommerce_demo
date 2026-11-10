@@ -18,9 +18,11 @@ function productCard(product) {
       <span class="view-cue">View details <b>↗</b></span>
     </button>
     <div class="product-info">
+      <span class="skin-type">${product.category === "face" ? "ALL SKIN TYPES" : product.category.toUpperCase()}</span>
       <button class="product-name" data-view="${product.id}">${product.name}</button>
       <p>${product.short} · ${product.size}</p>
-      <div class="price-row"><div><strong>${money.format(product.price)}</strong><del>${money.format(product.compareAt)}</del></div><button class="quick-add" data-add="${product.id}" aria-label="Add ${product.name} to bag">+</button></div>
+      <div class="price-row"><div><strong>${money.format(product.price)}</strong><del>${money.format(product.compareAt)}</del></div><span class="saving">SAVE ${Math.round((1 - product.price / product.compareAt) * 100)}%</span></div>
+      <button class="card-add" data-add="${product.id}" aria-label="Add ${product.name} to bag">ADD TO CART <span>＋</span></button>
     </div>
   </article>`;
 }
@@ -85,9 +87,19 @@ document.addEventListener("click", event => {
   const qty = event.target.closest("[data-qty]"); if (qty) updateQuantity(qty.dataset.id, Number(qty.dataset.qty));
 });
 
+function selectCategory(category, source) {
+  state.category = category;
+  document.querySelectorAll(".category-chip").forEach(button => button.classList.toggle("is-active", button === source || (!source && button.dataset.category === category)));
+  document.querySelectorAll("[data-tab-category]").forEach(button => button.classList.toggle("is-active", button.dataset.tabCategory === category));
+  renderProducts();
+}
+
 document.querySelectorAll(".category-chip").forEach(button => button.addEventListener("click", () => {
-  document.querySelectorAll(".category-chip").forEach(b => b.classList.remove("is-active")); button.classList.add("is-active"); state.category = button.dataset.category; renderProducts(); document.querySelector("#products").scrollIntoView({ behavior: "smooth", block: "start" });
+  selectCategory(button.dataset.category, button);
+  document.querySelector("#products").scrollIntoView({ behavior: "smooth", block: "start" });
 }));
+
+document.querySelectorAll("[data-tab-category]").forEach(button => button.addEventListener("click", () => selectCategory(button.dataset.tabCategory)));
 
 document.querySelectorAll(".cart-button, .dock-cart").forEach(button => button.addEventListener("click", openCart));
 document.querySelectorAll(".drawer-close, [data-close-cart]").forEach(button => button.addEventListener("click", closeCart));
@@ -105,10 +117,10 @@ const searchInput = document.querySelector("#site-search");
 document.querySelector(".search-button").addEventListener("click", () => { searchPanel.hidden = !searchPanel.hidden; if (!searchPanel.hidden) searchInput.focus(); });
 searchInput.addEventListener("input", () => { state.search = searchInput.value; renderProducts(); });
 document.querySelector("[data-clear-search]").addEventListener("click", () => { searchInput.value = ""; state.search = ""; renderProducts(); searchInput.focus(); });
-document.querySelector("[data-close-announcement]").addEventListener("click", event => event.currentTarget.closest(".announcement").remove());
+document.querySelector("[data-close-announcement]")?.addEventListener("click", event => event.currentTarget.closest(".announcement").remove());
 
 document.querySelector(".checkout-button").addEventListener("click", () => { closeCart(); checkoutDialog.showModal(); });
-document.querySelector("#checkout-form").addEventListener("submit", event => { event.preventDefault(); const order = `MM-${Date.now().toString().slice(-6)}`; state.cart = {}; saveCart(); renderCart(); checkoutDialog.close(); showToast(`Demo order ${order} created`); event.currentTarget.reset(); });
+document.querySelector("#checkout-form").addEventListener("submit", event => { event.preventDefault(); const order = `SG-${Date.now().toString().slice(-6)}`; state.cart = {}; saveCart(); renderCart(); checkoutDialog.close(); showToast(`Demo order ${order} created`); event.currentTarget.reset(); });
 document.querySelector("#newsletter-form").addEventListener("submit", event => { event.preventDefault(); showToast("Welcome to the good note"); event.currentTarget.reset(); });
 document.addEventListener("keydown", event => { if (event.key === "Escape" && drawer.classList.contains("is-open")) closeCart(); });
 
