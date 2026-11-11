@@ -6,6 +6,7 @@
     <meta name="description" content="Seoul Glow — curated skincare for a glow beyond ordinary." />
     <meta name="theme-color" content="#fff1e8" />
     <title>Seoul Glow — Glow Beyond Ordinary</title>
+    <link rel="icon" href="assets/seoul-glow-logo-cropped.jpeg" type="image/jpeg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -21,31 +22,23 @@
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h12M4 17h16" /></svg>
         </button>
         <a class="brand" href="#top" aria-label="Seoul Glow home">
-          <span class="brand-mark">S</span>
-          <span class="brand-copy"><strong>SEOUL GLOW</strong><small>KOREAN SKINCARE</small></span>
+          <span class="brand-logo-frame"><img class="brand-logo" src="assets/seoul-glow-logo-cropped.jpeg" alt="Seoul Glow" /></span>
         </a>
         <div class="desktop-nav">
-          <a href="#products">Products</a>
-          <a href="#story">Story</a>
-          <a href="#contact">Contact</a>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="combos.html">Combos</a>
+          <a href="story.html">Story</a>
+          <a href="contact.html">Contact</a>
         </div>
-        <div class="nav-actions">
-          <button class="icon-button search-button" aria-label="Search products">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
-          </button>
-          <a class="account-link" href="#contact" aria-label="Account">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5.5 20c.5-4 2.8-6 6.5-6s6 2 6.5 6"/></svg>
-          </a>
-          <button class="cart-button" aria-label="Open shopping bag">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.5h11l1 11h-13l1-11Z"/><path d="M9 9V6.5a3 3 0 0 1 6 0V9"/></svg>
-            <span>Bag</span><b class="cart-count">0</b>
-          </button>
-        </div>
+        <div class="nav-actions home-nav-actions"><a class="home-shop-link" href="products.html">Shop now</a><button class="cart-button" aria-label="Open shopping bag"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.5h11l1 11h-13l1-11Z"/><path d="M9 9V6.5a3 3 0 0 1 6 0V9"/></svg><b class="cart-count">0</b></button></div>
       </nav>
       <div id="mobile-menu" class="mobile-menu" hidden>
-        <a href="#products">Products</a>
-        <a href="#story">Story</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="combos.html">Combos</a>
+        <a href="story.html">Story</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="search-panel" hidden>
         <label for="site-search">What are you looking for?</label>
@@ -54,15 +47,12 @@
     </header>
 
     <main id="top">
-      <section class="video-banner" aria-label="Seoul Glow campaign video">
-        <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-rituals.png">
-          <source src="assets/seoul-glow-video.mp4" type="video/mp4" />
-          Your browser does not support embedded video.
-        </video>
-      </section>
-
       <section class="hero" aria-labelledby="hero-title">
-        <img src="assets/hero-rituals.png" alt="A curated collection of Seoul Glow skincare products in warm sunlight" />
+        <div class="hero-media">
+          <div class="hero-slide is-active">
+            <img src="assets/hero-rituals.png" alt="A curated collection of Seoul Glow skincare products in warm sunlight" />
+          </div>
+        </div>
         <div class="hero-scrim"></div>
         <div class="hero-content">
           <span class="hero-badge">NEW IN</span>
@@ -73,7 +63,6 @@
         </div>
         <div class="hero-note"><span>01</span><p>Featured<br /><strong>Ye;pre sunscreen</strong></p></div>
       </section>
-      <div class="hero-pagination" aria-label="Campaign slide 1 of 4"><span class="is-active"></span><span></span><span></span><span></span></div>
 
       <section class="benefit-bar" aria-label="Store benefits">
         <div><span>✦</span><p><strong>Authentic skincare</strong><small>Curated with care</small></p></div>
@@ -86,9 +75,28 @@
           <div><p class="eyebrow">Loved by your shelf</p><h2 id="products-title">Our Products</h2></div>
           <p>Four easy essentials for a simple, feel-good skincare ritual.</p>
         </div>
-        <div class="product-tabs" aria-label="Product filters"><button class="is-active" data-tab-category="all">All</button><button data-tab-category="face">Sunscreen</button><button data-tab-category="body">Mask Sheet</button><button data-tab-category="wellness">Face Wash</button></div>
+        <div class="product-tabs" aria-label="Product filters"><button class="is-active" data-tab-category="all">All</button><button data-tab-category="face">Sunscreen</button><button data-tab-category="body">Mask Sheet</button><button data-tab-category="wellness">SkinCare</button></div>
         <div id="product-grid" class="product-grid" aria-live="polite"></div>
         <p id="empty-state" class="empty-state" hidden>No products found. Try another search.</p>
+        <div class="products-page-cta"><a class="button button-dark" href="products.html">VIEW ALL PRODUCTS <span>→</span></a></div>
+      </section>
+
+      <section class="watch-section" aria-labelledby="watch-title">
+        <div class="watch-heading">
+          <p class="eyebrow">See the glow in motion</p>
+          <h2 id="watch-title">Watch It. Love It.</h2>
+        </div>
+        <div class="watch-scroller" aria-label="Seoul Glow videos">
+          <article class="watch-card watch-video">
+            <video controls controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture disableremoteplayback playsinline preload="metadata" aria-label="Seoul Glow product video">
+              <source src="assets/seoul-glow-video.mp4" type="video/mp4" />
+              Your browser does not support embedded video.
+            </video>
+          </article>
+          <div class="watch-card watch-placeholder" aria-label="Future video space"></div>
+          <div class="watch-card watch-placeholder" aria-label="Future video space"></div>
+          <div class="watch-card watch-placeholder" aria-label="Future video space"></div>
+        </div>
       </section>
 
       <section class="story" id="story">
@@ -106,6 +114,21 @@
         </div>
       </section>
 
+      <section class="explore-section" id="explore" aria-labelledby="explore-title">
+        <div class="explore-heading">
+          <p class="eyebrow">Everything in one place</p>
+          <h2 id="explore-title">Explore Seoul Glow</h2>
+        </div>
+        <div class="explore-grid">
+          <a class="explore-card" href="combos.html"><span>01</span><h3>Combos</h3><p>Build a simple skincare ritual with products that work beautifully together.</p><strong>View combos →</strong></a>
+          <a class="explore-card" href="track-order.html"><span>02</span><h3>Track Your Order</h3><p>Enter your order details and quickly request its latest delivery status.</p><strong>Track order →</strong></a>
+          <a class="explore-card" id="account" href="account.html"><span>03</span><h3>Account</h3><p>Visit your customer account page for sign-in and order assistance.</p><strong>Open account →</strong></a>
+          <a class="explore-card" id="blogs" href="blogs.html"><span>04</span><h3>Blogs</h3><p>Skincare tips, ingredient guides, and simple Korean beauty routines.</p><strong>Read blogs →</strong></a>
+          <article class="explore-card contact-card" id="contact-us"><span>05</span><h3>Contact Us</h3><p>Questions about products, orders, or your skincare routine? We’re happy to help.</p><div class="contact-links"><a href="contact.html">Contact page →</a><a href="mailto:abhatak07@gmail.com">Email us</a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></article>
+          <a class="explore-card" href="know-us-better.html"><span>06</span><h3>Know Us Better</h3><p>Learn why Seoul Glow makes skincare feel simple, thoughtful, and joyful.</p><strong>Meet Seoul Glow →</strong></a>
+        </div>
+      </section>
+
       <section class="newsletter" id="contact">
         <div><p class="eyebrow">The good note</p><h2>Offers, rituals, and shelf-worthy finds.</h2></div>
         <form id="newsletter-form"><label class="sr-only" for="newsletter-email">Email address</label><input id="newsletter-email" type="email" placeholder="Your email address" required /><button type="submit">Join us <span>→</span></button></form>
@@ -113,9 +136,9 @@
     </main>
 
     <footer>
-      <a class="brand footer-brand" href="#top"><span class="brand-mark">S</span><span class="brand-copy"><strong>SEOUL GLOW</strong><small>KOREAN SKINCARE</small></span></a>
+      <a class="brand footer-brand" href="#top" aria-label="Seoul Glow home"><span class="brand-logo-frame"><img class="brand-logo" src="assets/seoul-glow-logo-cropped.jpeg" alt="Seoul Glow" /></span></a>
       <p>Made thoughtfully for slow moments and busy days.</p>
-      <div class="footer-links"><a href="#products">Shop</a><a href="#story">About</a><a href="mailto:hello@seoulglow.com">Contact</a><a href="#">Instagram</a></div>
+      <div class="footer-links"><a href="products.html">Shop</a><a href="combos.html">Combos</a><a href="track-order.html">Track order</a><a href="story.html">Story</a><a href="blogs.html">Blogs</a><a href="contact.html">Contact</a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
       <small>© <span id="year"></span> Seoul Glow · www.seoulglow.com</small>
     </footer>
 

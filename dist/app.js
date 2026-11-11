@@ -10,6 +10,10 @@ const drawer = document.querySelector(".cart-drawer");
 const backdrop = document.querySelector(".backdrop");
 const toast = document.querySelector(".toast");
 
+document.querySelectorAll(".watch-video video").forEach(video => {
+  video.addEventListener("contextmenu", event => event.preventDefault());
+});
+
 function productCard(product) {
   return `<article class="product-card" data-id="${product.id}">
     <button class="product-visual" data-view="${product.id}" aria-label="View ${product.name}" style="--product-color:${product.color}">
@@ -114,7 +118,7 @@ mobileMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", 
 
 const searchPanel = document.querySelector(".search-panel");
 const searchInput = document.querySelector("#site-search");
-document.querySelector(".search-button").addEventListener("click", () => { searchPanel.hidden = !searchPanel.hidden; if (!searchPanel.hidden) searchInput.focus(); });
+document.querySelector(".search-button")?.addEventListener("click", () => { searchPanel.hidden = !searchPanel.hidden; if (!searchPanel.hidden) searchInput.focus(); });
 searchInput.addEventListener("input", () => { state.search = searchInput.value; renderProducts(); });
 document.querySelector("[data-clear-search]").addEventListener("click", () => { searchInput.value = ""; state.search = ""; renderProducts(); searchInput.focus(); });
 document.querySelector("[data-close-announcement]")?.addEventListener("click", event => event.currentTarget.closest(".announcement").remove());
@@ -126,3 +130,7 @@ document.addEventListener("keydown", event => { if (event.key === "Escape" && dr
 
 document.querySelector("#year").textContent = new Date().getFullYear();
 renderProducts(); renderCart();
+if (location.hash === "#bag") {
+  openCart();
+  history.replaceState(null, "", `${location.pathname}${location.search}`);
+}
